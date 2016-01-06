@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<locations>
+  <% var url = config.url + config.root %>
+  <% posts.forEach(function(post){ %>
+  <location
+    url="<%- encodeURI(url + post.path) %>"
+    lastmod="<%= post.updated.toISOString() || post.date.toISOString() %>"
+    lat="<%= post.location[0] %>"
+    lng="<%= post.location[1] %>"
+    title="<%= post.title %>">
+  </location>
+  <% }) %>
+</locations>
