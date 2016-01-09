@@ -14,7 +14,6 @@ function initialise() {
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
   xmlUrl = "<%= url %>";
   loadMarkers();
-
 }
 
 function downloadUrl(url, callback) {
@@ -58,9 +57,23 @@ function loadMarkers() {
       });
       map.markers.push(marker);
       bindInfoWindow(marker, map, infoWindow, html);
-    }
+    } 
+    centreMap();
   });
 }
+
+function centreMap() {
+  var latLngBounds = new google.maps.LatLngBounds();
+  for (var i = 0; i < map.markers.length; i++) {
+    var currentMarker = map.markers[i];
+    var latLngPoint = new google.maps.LatLng(currentMarker.position.lat(), currentMarker.position.lng());
+    latLngBounds.extend(latLngPoint);
+  }
+  map.setCenter(latLngBounds.getCenter());
+  map.fitBounds(latLngBounds); 
+}
+
+
 
 google.maps.event.addDomListener(window, 'load', initialise);
 </script>
