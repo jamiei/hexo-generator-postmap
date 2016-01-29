@@ -25,8 +25,8 @@ You can configure this plugin in `_config.yml`.
 
 ``` yaml
 postmap:
-  xmlpath: 'locations.xml',
-  mappagestub: 'mapofposts',
+  xmlpath: 'locations.xml'
+  mappagestub: 'mapofposts'
   mappagetitle: 'Map of posts'
 ```
 
