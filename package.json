@@ -1,6 +1,6 @@
 {
   "name": "hexo-generator-postmap",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A plugin for the Hexo static site generator that generates an archive page with geo-tagged posts and pages on an interactive google map",
   "main": "index.js",
   "scripts": {

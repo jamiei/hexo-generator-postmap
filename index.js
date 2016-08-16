@@ -8,7 +8,6 @@ var config = hexo.config.postmap = merge({
   google_maps_api_key: ''
 }, hexo.config.postmap);
 
-console.log("config: ", config);
 
 if (!pathFn.extname(config.xml_path)){
   config.xml_path += '.xml';
