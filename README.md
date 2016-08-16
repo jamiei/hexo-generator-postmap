@@ -25,16 +25,24 @@ You can configure this plugin in `_config.yml`.
 
 ``` yaml
 postmap:
-  xmlpath: 'locations.xml',
-  mappagestub: 'mapofposts',
-  mappagetitle: 'Map of posts'
+  xml_path: 'locations.xml'
+  map_page_stub: 'mapofposts'
+  map_page_title: 'Map of posts'
+  google_maps_api_key: 'API_KEY'
 ```
 
-- **xmlpath** - Path to your locations.xml document.
-- **mappagestub** - The url friendly name of your map page without slashes (eg mapofposts)
-- **mappagetitle** - The human friendly name of your map page, used as the hexo title of page.
+- **xml_path** - Path to your locations.xml document.
+- **map_page_stub** - The url friendly name of your map page without slashes (eg mapofposts)
+- **map_page_title** - The human friendly name of your map page, used as the hexo title of page.
+- **google_maps_api_key** - Your API key for Google Maps [see instructions here](https://developers.google.com/maps/documentation/javascript/get-api-key).
+
+You will also likely want to create a menu navigation link in your hexo site to your map page stub link.
 
 ## Changes
+
+### 0.3
+- Requires Google Maps API key.
+- Updated date format of post date on map display.
 
 ### 0.2
 - Added auto centre and zoom around the added location bounds.

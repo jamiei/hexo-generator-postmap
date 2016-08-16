@@ -1,5 +1,5 @@
 
-<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= google_maps_api_key %>&callback=initialise"></script>
 
 <script type="text/javascript">
 function initialise() {
@@ -45,7 +45,7 @@ function loadMarkers() {
     for (var i = 0; i < markers.length; i++) {
       var title = markers[i].getAttribute("title");
       var url = markers[i].getAttribute("url");
-      var lastmod = markers[i].getAttribute("lastmod");
+      var lastmod = new Date(markers[i].getAttribute("lastmod"));
       var point = new google.maps.LatLng(
         parseFloat(markers[i].getAttribute("lat")),
         parseFloat(markers[i].getAttribute("lng")));
